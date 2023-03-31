@@ -3,13 +3,14 @@ function index(req, res) {
   console.log("Entra en el controlador")
   req.getConnection((err, conn) => {
     console.log("Ejecuta la select")
-    conn.query('SELECT 	d.id_dosis as id, d.hora as hora, d.cantidad as cantidad, m.nombre_Medicamento as medicamento FROM dosis d, medicamentos m WHERE	d.id_medicamento = m.id_medicamento AND		d.id_usuario = 1 ;', (err, tasks) => {
+      conn.query('SELECT * FROM tasks;', (err, tasks) => {
       if(err) {
         console.log("Error en la select")
         res.json(err);
       }      
-      console.log("Sigue sin problemas")
-      res.render('tasks/index', { tasks });
+      console.log(tasks);
+      console.log("Sigue sin problemas");
+      res.render('tasks/index', { tasks: tasks });
     });    
   });
   console.log("Salimos del INDEX")
