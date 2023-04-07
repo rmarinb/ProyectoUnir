@@ -1,0 +1,27 @@
+<div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+  <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg mt-12">
+
+    <table class="table-fixed w-full">
+      <thead>
+        <tr class="bg-blue-500 text-white">
+          <th class="w-20 py-4 ...">Id Log</th>
+          <th class="w-20 py-4 ...">Fecha</th>
+          <th class="w-1/4 py-4 ...">Hora</th>
+          <th class="w-1/2 py-4 ...">Medicamento</th>      
+          <th class="w-1/2 py-4 ...">Resultado</th>             
+        </tr>
+      </thead>
+      <tbody>
+        {{#each tasks}}
+        <tr>
+          <td class="py-3 px-6">{{id}}</td>
+          <td class="py-3 px-6">{{fecha}}</td>
+          <td class="py-3 px-6">{{hora}}</td>
+          <td class="p-3 text-center">{{Medicamento}}</td>
+          <td class="p-3 text-center">{{Resultado}}</td>                    
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</div>
