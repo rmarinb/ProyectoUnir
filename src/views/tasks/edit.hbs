@@ -5,14 +5,20 @@
   {{#each tasks}}
   <form action="" method="POST" class="mt-4">
 
+    <label for="Hora"> Hora </label>
+
     <input type="text" class="border border-gray-200 rounded-md bg-gray-200 w-full text-lg placeholder-gray-500 
       p-2 my-2 focus:bg-white" placeholder="Hora" name="hora" value="{{hora}}">
+
+    <label for="Cantidad"> Cantidad </label>
 
     <input type="text" class="border border-gray-200 rounded-md bg-gray-200 w-full text-lg placeholder-gray-500 
       p-2 my-2 focus:bg-white" placeholder="Cantidad" name="cantidad" value="{{cantidad}}">
 
+    <label for="Medicamento"> Medicamento </label>
+    
     <textarea class="border border-gray-200 rounded-md bg-gray-200 w-full text-lg placeholder-gray-500 
-      p-2 my-2 focus:bg-white h-40" placeholder="Medicamento" name="medicamento">{{medicamento}}</textarea>
+      p-2 my-2 focus:bg-white h-40" placeholder="Medicamento" name="medicamento" disabled >{{medicamento}}</textarea>
 
     <button type="submit" class="rounded-md bg-blue-500 w-full text-lg text-white font-semibold p-2 my-3
       hover:bg-blue-600 focus:bg-blue-700">Enviar</button>

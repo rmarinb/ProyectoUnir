@@ -8,6 +8,7 @@
           <th class="w-20 py-4 ...">Hora</th>
           <th class="w-1/4 py-4 ...">Cantidad</th>
           <th class="w-1/2 py-4 ...">Medicamento</th>      
+          <th class="w-1/2 py-4 ...">Nombre Comun</th>   
           <th class="w-28 py-4 ...">Acciones</th>    
         </tr>
       </thead>
@@ -16,8 +17,9 @@
         <tr>
           <td class="py-3 px-6">{{id}}</td>
           <td class="py-3 px-6">{{hora}}</td>
-          <td class="p-3">{{cantidad}}</td>
+          <td class="p-3 text-center">{{cantidad}}</td>
           <td class="p-3 text-center">{{medicamento}}</td>
+          <td class="p-3 text-center">{{nombre_Comun}}</td>
           <td class="p-3 flex">
             <form action="/tasks/delete" method="POST" class="mx-2">
               <input type="hidden" value="{{ID}}" name="id">
