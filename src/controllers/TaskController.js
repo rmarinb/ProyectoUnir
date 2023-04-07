@@ -95,7 +95,7 @@ function update(req, res) {
 function logs(req, res) {
   console.log("Entra en el LOG")
   req.getConnection((err, conn) => {      
-      conn.query('SELECT l.ID_Log, substr(l.fecha, 1, 10) as fecha, l.resultado, d.hora, m.nombre_medicamento FROM log l, dosis d, medicamentos m WHERE l.ID_dosis = d.ID_dosis AND d.id_Medicamento = m.ID_Medicamento order by fecha, hora;', (err, tasks) => {
+      conn.query('SELECT l.ID_Log, substr(l.fecha, 1, 10) as fecha, l.resultado as resultado, d.hora, m.nombre_medicamento as medicamento FROM log l, dosis d, medicamentos m WHERE l.ID_dosis = d.ID_dosis AND d.id_Medicamento = m.ID_Medicamento order by fecha, hora;', (err, tasks) => {
       if(err) {
         console.log("Error en la select del log")
         res.json(err);
