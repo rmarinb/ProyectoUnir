@@ -39,9 +39,10 @@ function store(req, res) {
 }
 
 function destroy(req, res) {
-  console.log("Entra en el DELETE")
-  const id = req.body.id;
-
+  console.log("Entra en el DELETE. Valor del ID:")
+  const id = req.params.id;
+  console.log(id);
+  console.log(req.params);
   req.getConnection((err, conn) => {
     console.log("Va a hacer el delete")
     conn.query('DELETE FROM dosis WHERE id_dosis = ?', [id], (err, rows) => {
