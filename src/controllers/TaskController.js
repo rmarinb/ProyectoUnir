@@ -6,8 +6,7 @@ function index(req, res) {
       if(err) {
         console.log("Error en la select")
         res.json(err);
-      }      
-      console.log(tasks);
+      }            
       res.render('tasks/index', { tasks: tasks });
     });    
   });
@@ -25,7 +24,13 @@ function store(req, res) {
 
   req.getConnection((err, conn) => {
     console.log("Va a hacer insert")
-    conn.query('INSERT INTO dosis SET ?', [data], (err, rows) => {
+    console.log(data);
+    conn.query('INSERT INTO dosis SET ID_Usuario=1,  ?', [data], (err, rows) => {
+      if(err) {
+        console.log(err);
+        console.log("Error del INSERT");
+        res.json(err);
+      }
       console.log("Insert OK")
       res.redirect('/tasks');
     });    
