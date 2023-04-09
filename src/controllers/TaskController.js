@@ -2,7 +2,7 @@
 function index(req, res) {
   console.log("Entra en el controlador")
   req.getConnection((err, conn) => {      
-      conn.query('SELECT 	d.id_dosis as id, d.hora as hora, d.cantidad as cantidad, m.nombre_Medicamento as medicamento, m.nombre_Comun as nombre_Comun FROM dosis d, medicamentos m WHERE	d.id_medicamento = m.id_medicamento AND		d.id_usuario = 1 ;', (err, tasks) => {
+      conn.query('SELECT 	d.id_dosis as id, d.hora as hora, d.cantidad as cantidad, m.nombre_Medicamento as medicamento, m.nombre_Comun as nombre_Comun FROM dosis d, medicamentos m WHERE	d.id_medicamento = m.id_medicamento AND		d.id_usuario = 1 ORDER BY d.hora;', (err, tasks) => {
       if(err) {
         console.log("Error en la select")
         res.json(err);
